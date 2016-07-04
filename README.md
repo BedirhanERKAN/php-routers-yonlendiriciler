@@ -13,7 +13,8 @@ Php Routers ( Yönlendiriciler )
 
 Router::any ve Router::post olmak üzere 2 türdedir.
 
-Router::any  : Her iki gönderi türünü ( GET ve POST ) kapsamaktadır.
+Router::any  : Her iki gönderi türünü ( GET ve POST ) kapsamaktadır.                        
+
 Router::post : Sadece POST gönderi türünde çalışmaktadır.
 
 
