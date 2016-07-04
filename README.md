@@ -27,12 +27,20 @@ Router::any ise her iki gönderi türünde çalışmaktadır.
     Router::any("/","views/welcome.php",array());
     Router::any("/index.html","views/welcome.php",array());
 
+example.com ve example.com/index.html sayfalarına girildiği zaman yönlendirici views/welcome.php php sayfasına yönlendirir.
+
     Router::any("/breaking-news/([0-9]+).html","views/breaking-news.php",array("news-id"));
+
+example.com/breaking-news/1.html girdiği zaman yönlendirii views/breaking-news.php php sayfasına yönlendirir.
+
+([0-9]+) tanılmalanan alan sadece sayı gelecek şekilde şartlandırır ve şart sağlanır ise sayfaya yönlendirileçeğini unutmayınız.
+
+example.com/breaking-news/bir.html şeklinde kullanılması halinde
+
+
+
     Router::any("/breaking-news/(.*)-([0-9]+).html","views/breaking-news.php",array("news-title","news-id"));
-    Router::any("/webservice/v([0-9]+)/(.*)/(.*)/([0-9]+)","views/webservice.php",array("webservice-version","webservice-class","webservice-function","webservice-arg"));
 
-    Router::post("/kayit-et/([0-9]+).html","views/post.php",array("post_id"));
-
-
+example.com/breaking-news/son-dakika-haberi-1.html
 
 
