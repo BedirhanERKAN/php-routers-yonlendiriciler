@@ -107,16 +107,18 @@ class Router{
                 break;
             }else{
                     $errorcode+=1;
-
-                    if(sizeof(self::$requestlist)==$errorcode+1 and self::$configlist['error_none']==false)
+    
+                    if(sizeof(self::$requestlist)==$errorcode+1 )
                     {
-                       header("HTTP/1.0 404 Not Found");
-                        echo "Yönlendirici Listesini Kontrol Ediniz.";
-                    }else{
-                        echo "404 Not Found";
+                        if(self::$configlist['error_none']==false){
+                            header("HTTP/1.0 404 Not Found");
+                            echo "Yönlendirici Listesini Kontrol Ediniz.";
+                            die();
+                        }else{
+                            echo "404 Not Found";
+                            die();
+                        }
                     }
-
-                    die();
             }
              
         }
